@@ -6,7 +6,7 @@ on:
   schedule:
     - cron: "0 0 * * *"
 jobs:
-  update:
+  productive-box:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -16,3 +16,14 @@ jobs:
           GH_TOKEN: ${{ secrets.GH_TOKEN_PRODUCTIVE_BOX }}
           GIST_ID: 57c32c7f37c7c5f021687c353f6fbad0
           TIMEZONE: Asia/Tokyo
+
+  waka-box:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Update gist
+        uses: matchai/waka-box@v4.0.5
+        env:
+          WAKATIME_API_KEY: ${{ secrets.WAKATIME_API_KEY }}
+          GH_TOKEN: ${{ secrets.GH_TOKEN_WAKA_BOX }}
+          GIST_ID: 69f898a483a3105168c0bc0180aa2e6f
