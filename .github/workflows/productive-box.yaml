@@ -1,0 +1,17 @@
+name: Update productive-box
+on:
+  repository_dispatch:
+    types: [ build-event ]
+  schedule:
+    - cron: "0 0 * * *"
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Update gist
+        uses: maxam2017/productive-box@1.1.1
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN_PRODUCTIVE_BOX }}
+          GIST_ID: 57c32c7f37c7c5f021687c353f6fbad0
+          TIMEZONE: Asia/Tokyo
