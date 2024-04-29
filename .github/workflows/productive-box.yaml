@@ -9,7 +9,7 @@ jobs:
   productive-box:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4.1.3
+      - uses: actions/checkout@v4.1.4
       - name: Update gist
         uses: maxam2017/productive-box@v1.2.0
         env:
@@ -20,7 +20,7 @@ jobs:
   waka-box:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4.1.3
+      - uses: actions/checkout@v4.1.4
       - name: Update gist
         uses: matchai/waka-box@v5.0.0
         env:
